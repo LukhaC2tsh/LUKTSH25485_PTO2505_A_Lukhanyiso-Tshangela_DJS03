@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import PodcastPreviewCard from "./components/PodcastPreviewCard.jsx";
-import Modal from "./components/Modal.jsx"; // optional
-import { mapGenreIdsToTitles } from "./utils/mapGenres.js";
+import Modal from "./components/Modal.jsx";
 
 function App() {
   const [podcasts, setPodcasts] = useState([]);
@@ -41,7 +40,6 @@ function App() {
           />
         ))}
       </div>
-
       {selectedPodcast && (
         <Modal podcast={selectedPodcast} onClose={() => setSelectedPodcast(null)} />
       )}

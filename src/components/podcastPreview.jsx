@@ -2,8 +2,7 @@ import { formatDistanceToNow } from "date-fns";
 import { mapGenreIdsToTitles } from "../utils/mapGenres.js";
 
 export default function PodcastPreviewCard({ podcast, onClick }) {
-  const genreTitles = mapGenreIdsToTitles(podcast.genres);
-
+  const genreTitles = mapGenreIdsToTitles(podcast.genres || []);
   return (
     <div className="card" onClick={onClick}>
       <img src={podcast.image} alt={podcast.title} className="card-image" />
@@ -15,7 +14,9 @@ export default function PodcastPreviewCard({ podcast, onClick }) {
             <span key={i} className="genre-tag">{g}</span>
           ))}
         </div>
-        <p className="date">Updated {formatDistanceToNow(new Date(podcast.updated))} ago</p>
+        <p className="date">
+          Updated {formatDistanceToNow(new Date(podcast.updated || Date.now()))} ago
+        </p>
       </div>
     </div>
   );
