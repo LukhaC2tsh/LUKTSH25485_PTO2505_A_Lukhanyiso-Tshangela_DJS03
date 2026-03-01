@@ -1,18 +1,8 @@
-export const genres = [
-  { id: 1, title: "Personal Growth" },
-  { id: 2, title: "Investigative Journalism" },
-  { id: 3, title: "History" },
-  { id: 4, title: "Comedy" },
-  { id: 5, title: "Entertainment" },
-  { id: 6, title: "Business" },
-  { id: 7, title: "Fiction" },
-  { id: 8, title: "News" },
-  { id: 9, title: "Kids and Family" },
-];
+import { genres } from '../../data/genres.js'
 
 export function mapGenreIdsToTitles(genreIds) {
-  return genreIds.map((id) => {
-    const g = genres.find((g) => g.id === id);
-    return g ? g.title : "Unknown";
-  });
+  return genreIds.map(id => {
+    const found = genres.find(g => g.id === id)
+    return found ? found.title : 'Unknown'
+  })
 }
