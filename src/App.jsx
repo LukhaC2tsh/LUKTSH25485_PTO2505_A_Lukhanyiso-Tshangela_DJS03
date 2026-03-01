@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
-import PodcastPreviewCard from './components/PodcastPreviewCard.jsx'
-import Modal from './components/Modal.jsx'
+import { useState, useEffect } from 'react';
+import PodcastPreviewCard from './components/PodcastPreviewCard.jsx';
+import Modal from './components/Modal.jsx';
 
 function App() {
   const [podcasts, setPodcasts] = useState([])
